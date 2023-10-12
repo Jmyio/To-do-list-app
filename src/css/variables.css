@@ -1,0 +1,29 @@
+:root {
+    /* colors */
+    --main-background-color: #EAE8E8;
+    --secondary-background-color: #fff;
+    --third-background-color: #212529;
+    --btns-color: #212529;
+    --btns-clicked-hover-color: #343A40;
+    --main-text-color-dark: #212529;
+    --main-text-color-white: #ffffff;
+    --secondary-text-color: #6C757D;
+    --search-box-color: #6C757D;
+    --lines-color: rgb(0, 0, 0, 0.5);
+    --links-color: #256FFF;
+    --primary-border-radius: 8px;
+
+    /* font */
+    --title-text: 43px;
+    --large-text: 18px;
+    --medium-text: 16px;
+    --small-text: 14px;
+    --tiny-text: 12px;
+    --title-spacing: 2.15px;
+    --text-spacing: 0.9px;
+    --regular-weight: 400;
+    --light-weight: 300;
+
+    /* shadow */
+    --main-shading: 0px 0px 4px 2px rgba(0, 0, 0, 0.10);
+}

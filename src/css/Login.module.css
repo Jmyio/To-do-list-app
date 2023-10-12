@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--main-text-color-dark);
+    letter-spacing: var(--text-spacing);
+}
+
+a {
+    cursor: pointer;
+}
+
+.loginBlock_container{
+    background-color: var(--main-background-color);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginBlock {
+    width: 778px;
+    height: 693px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--secondary-background-color);
+    box-shadow: var(--main-shading);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.left_bg_container {
+    width: 250px;
+    height: 693px;
+    background-image: url(/public/img/login-bg.jpg);
+    background-repeat: none;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.loginInfo_container {
+    display: flex;
+    width: 528px;
+    height: 693px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.loginInfo {
+    width: 100%;
+    height: 100%;
+}
+
+.icon_container {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    overflow: hidden;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-image: url(/public/img/checklist.png);
+    background-size: cover;
+}
+
+.icon_name {
+    font-size: var(--title-text);
+    font-weight: var(--regular-weight);
+    letter-spacing: var(--title-spacing);
+    padding-left: 4px;
+}
+
+.loginFailed {
+    font-size: var(--tiny-text);
+    margin-bottom: 4px;
+    color: rgb(251, 117, 117);
+}
+
+.loginFailedBlock {
+    margin-bottom: 4px;
+    width: 100%;
+    height: 13.6px;
+}
+
+.inputBlock_container {
+    width: 300px;
+    margin: 46px 94px 39px 94px;
+}
+
+.inputBlock_container * {
+    width: 100%;
+}
+
+.inputBlock {
+    font-size: var(--large-text);
+    font-weight: var(--light-weight);
+}
+
+.inputBlock input {
+    height: 30.247px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--lines-color);
+}
+
+.spacing1 {
+    height: 34.81px;
+}
+
+.spacing2 {
+    height: 38px;
+}
+
+.loginBtn {
+    height: 35px;
+    color: var(--main-text-color-white);
+    font-weight: var(--regular-weight);
+    font-size: var(--large-text);
+    box-sizing: border-box;
+    padding: 6px;
+    margin-bottom: 14px;
+    transition: background 0.5s;
+}
+
+.loginBtn:hover {
+    background-color: var(--btns-clicked-hover-color);
+}
+
+.createLink {
+    font-size: var(--tiny-text);
+    font-weight: var(--light-weight);
+    text-align: center;
+}
+
+.otherLogin_container{
+    width: 300px;
+    height: 121px;
+    margin: 0 94px;
+}
+
+.text {
+    font-size: var(--small-text);
+    width: 100%;
+    text-align: center;
+    font-weight: var(--light-weight);
+    margin-bottom: 20px;
+}
+
+.orLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 39px;
+    height: 16px;
+}
+
+.orLine p {
+    font-size: var(--tiny-text);
+}
+
+.orLine div {
+    width: 120px;
+    height: 0.5px;
+    background-color: var(--lines-color);
+}
+
+.loginLogos_container {
+    padding: 0 71px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.loginLogo1 {
+    background-image: url(/public/img/apple-logo.png);
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.loginLogo2 {
+    background-image: url(/public/img/google.png);
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.loginLogo3 {
+    background-image: url(/public/img/facebook.png);
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+.signUp_container {
+    width: 528px;
+    height: 693px;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeIn 1s;
+}
+
+.signUpInput_container {
+    width: 300px;
+    margin: 46px 94px 39px 94px;
+}
+
+.signUpInput_container * {
+    width: 100%;
+}
+
+.loginLink {
+    font-size: var(--tiny-text);
+    font-weight: var(--light-weight);
+    text-align: center;
+}
+
+.icon_signup {
+    background-image: url(/public/img/signup.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.signUpBtn {
+    height: 35px;
+    color: var(--main-text-color-white);
+    font-weight: var(--regular-weight);
+    font-size: var(--large-text);
+    box-sizing: border-box;
+    padding: 6px;
+    margin-bottom: 38px;
+    transition: background 0.5s;
+}
+
+.signUpBtn:hover {
+    background-color: var(--btns-clicked-hover-color);
+}
+
+.complete_container {
+    width: 528px;
+    height: 693px;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeIn 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.completeIcon {
+    background-image: url(/public/img/complete.png);
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.complete_name {
+    font-size: var(--title-text);
+    width: 400px;
+    text-align: center;
+    margin-bottom: 20px;
+}
