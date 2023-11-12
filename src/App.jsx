@@ -9,7 +9,12 @@ import Cookies from 'js-cookie';
 function App() {
 
   const userInfoCookie = Cookies.get('userInfo');
-  const parsedUserInfo = JSON.parse(userInfoCookie);
+  
+  let parsedUserInfo = []
+
+  if (userInfoCookie != undefined) {
+    parsedUserInfo = JSON.parse(userInfoCookie);
+  }
 
   const [userInfo, setUserInfo] = useState(parsedUserInfo);
 
@@ -19,8 +24,8 @@ function App() {
       <UserInfo.Provider value={{userInfo, setUserInfo}}>
 
       <Routes>
-        <Route path='/login' element={<Login/>}></Route>
-        <Route path='/todohome/:username' element={<Home/>}></Route>
+        <Route path='/taskflow/login' element={<Login/>}></Route>
+        <Route path='/taskflow/todohome/:username' element={<Home/>}></Route>
       </Routes>
 
       </UserInfo.Provider>

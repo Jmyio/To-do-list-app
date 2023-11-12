@@ -103,6 +103,9 @@
     width: 40px;
     background-color: var(--search-box-color);
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .userIcon * {

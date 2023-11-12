@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import homeCss from './css/Home.module.css'
-import List from './homePages/List';
+import List from './List';
 import { UserInfo } from './UserInfo';
 import Cookies from 'js-cookie';
 import axios from 'axios';
@@ -20,7 +20,7 @@ export default function Home() {
   const [activeList, setActiveList] = useState(1)
   const [showList, setShowList] = useState(true)
   const [activeContent, setActiveContent] = useState(userInfo.lists[0])
-  const [activeContentIndex, setActiveContentIndex] = useState(1)
+  const [activeContentIndex, setActiveContentIndex] = useState(0)//was set at 1, so made duplicate tasks bug
   const [isEdit, setIsEdit] = useState(false)
   const [listName, setListName] = useState('')
   const [isAddList, setIsAddList] = useState(false)
@@ -64,7 +64,7 @@ export default function Home() {
             onKeyDown={(e) => handleKeyDown(e, list.listid)}
           />
         ) : (
-          <p>{list.listname}</p>
+          <p><span className={homeCss.listdot}>• </span>{list.listname}</p>
         )}
 
         {
@@ -233,14 +233,16 @@ export default function Home() {
   }
 
   function logout() {
-    navigation(`/login`);
+    navigation(`/taskflow/login`);
+    setUserInfo(null);
+    Cookies.remove('userInfo');
   }
 
   return (
     <div className={homeCss.home_conatainer}>
       <div className={homeCss.navbar}>
         <div className={homeCss.userBlock} onClick={showOption}>
-          <div className={homeCss.userIcon}></div>
+          <div className={homeCss.userIcon}>{param.username[0].toUpperCase()}</div>
           <div className={homeCss.userNameEmail}>        
             <p className={homeCss.userName}>{param.username}</p>
             <p className={homeCss.userEmail}>{userInfo.userInfo[0].email}</p>

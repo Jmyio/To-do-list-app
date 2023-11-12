@@ -75,7 +75,7 @@ export default function Login() {
                 setUserInfo(response.data);
 
                 const username = response.data.userInfo[0].username;
-                navigation(`/todohome/${username}`);
+                navigation(`/taskflow/todohome/${username}`);
 
                 console.log(userInfo)
             }
@@ -88,12 +88,38 @@ export default function Login() {
         }
     }
 
+    useEffect(() => {
+        const userSession = Cookies.get('userInfo');
+    
+        if (userSession) {
+          const userInfo = JSON.parse(userSession);
+    
+          const { email, password } = userInfo.userInfo[0];
+    
+          // Set state values for email and password
+          setEmail(email);
+          setPassword(password);
+        }
+    }, []); // Empty dependency array to run the effect only once on mount
+
+    if (Cookies.get('userInfo') && email && password) {
+        handleLogin()
+    }
+
+    const isValidEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      };
+      
+      const isValidPassword = (password) => {
+        return password.length >= 8;
+      };
+
     const handleSignUp = async() => {
-        if (!email || !password || !username) {
-            // Validate that required fields are not empty
-            alert('Email, Password, and Username are required.');
+        if (!isValidEmail(email) || !isValidPassword(password) || !username) {
+            window.alert('Please enter a valid email and password (at least 8 characters).');
             return;
-          }
+        }
         try {
             const response = await axios.post('http://localhost:8080/api/usersdata/createuserinfo', null, {
                 params: {
